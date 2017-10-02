@@ -1,0 +1,35 @@
+.wrapper {
+  width :100vw;
+  height :100vh;
+  .first-half {
+    background-color: $color-principal;
+    height :50vh;
+  }
+  .second-half {
+    background-color: $color-secundario;
+    height :50vh;
+  }
+  form {
+    @include center-both;
+    padding:30px;
+    background-color: white;
+    box-shadow: 0 2px 4px #595959;
+    -webkit-border-radius : 10px;
+    -moz-border-radius    : 10px;
+    border-radius         : 10px;
+    input {
+      display : block;
+    }
+    button {
+      background-color : $color-principal;
+      border:none;
+      color:white;
+      outline: none;
+      padding: 10px 30px;
+      margin-top:20px;
+      -webkit-border-radius : 10px;
+      -moz-border-radius    : 10px;
+      border-radius         : 10px;
+    }
+  }
+}

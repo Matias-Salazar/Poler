@@ -1,0 +1,24 @@
+/*======== How works ==========*/
+.how-works {
+  text-align  : center;
+  font-family : $font-principal;
+  h2 {
+    font-weight : bold;
+    color       : $color-principal;
+    font-size   : 1.6rem;
+  }
+  .how-works-wrapper {
+    margin : 40px 0;
+    .how-works-item {
+      padding : 0 50px;
+      h4 {
+        font-weight : bold;
+        font-size   : 1.5rem;
+        color       : $color-secundario;
+      }
+      p {
+        font-size : 1rem;
+      }
+    }
+  }
+}

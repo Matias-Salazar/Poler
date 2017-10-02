@@ -1,0 +1,18 @@
+{
+  "name": "probando-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "node-sass --include-path scss src/scss/style.scss  public/css/style.css",
+    "watch-sass": "npm run build-sass && npm run build-sass -- -w",
+    "build-js": "babel src --presets babel-preset-es2015 --out-dir public"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "node-sass": "^4.5.3"
+  }
+}
