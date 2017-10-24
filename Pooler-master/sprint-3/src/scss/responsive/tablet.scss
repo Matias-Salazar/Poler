@@ -1,0 +1,120 @@
+/* Small Devices, Tablets */
+@media (max-width : 768px) {
+  html {
+    font-size : 14px;
+  }
+  /************** Hero.php *************************/
+  .hero {
+    .hero-wrapper {
+      h1 {
+        padding   : 10px;
+        font-size : 12vh;
+      }
+      p {
+        padding   : 10px;
+        font-size : 2.8vw;
+      }
+    }
+  }
+  .hero-text {
+    .hero-wrapper {
+      padding : 20px;
+      h3 {
+        font-size : 4.5vw;
+      }
+      p {
+        font-size : 2.4vw;
+        padding   : 10px 0;
+      }
+      a {
+        button {
+          font-size : 5vw;
+        }
+      }
+    }
+  }
+  /****************** How works **********************/
+  .how-works {
+    h2 {
+      margin    : 20px 0;
+      font-size : 4.5vw;
+    }
+    .how-works-wrapper {
+      .how-works-item {
+        h4 {
+          padding   : 10px 0;
+          font-size : 3.5vw;
+        }
+        p {
+          padding   : 10px 0;
+          font-size : 2.5vw;
+        }
+      }
+    }
+  }
+  /****************** Gallery pool *******************/
+  .gallery {
+    h2 {
+      font-size : 4.5vw;
+      margin    : 20px 0;
+    }
+    .gallery-wrapper {
+      margin : 40px 0;
+      .gallery-item {
+        .item-wrapper {
+          .descr-wrapper {
+            .title {
+              font-size : 3vw;
+            }
+            .desc-text {
+              font-size : 2vw;
+            }
+          }
+          .date-wrapper {
+            font-size : 2vw;
+          }
+          .category-wrapper {
+            font-size : 2vw;
+          }
+          .user {
+            font-size : 2.3vw;
+          }
+          .btn-more {
+            a {
+              font-size : 4vw;
+            }
+          }
+        }
+      }
+    }
+  }
+  /****************** Register.php and login.php **********************/
+  .form-container {
+    .form-wrapper {
+      padding       : 10px;
+      .form-group {
+        margin-bottom : 20px;
+      }
+      .form-group:nth-child(5) {
+        margin-bottom : 10px;
+      }
+    }
+  }
+  .form-wrapper .form-group .form-item > input {
+    font-size : 1.2rem;
+  }
+  .form-wrapper .form-group p.error {
+    font-size : 0.8rem;
+  }
+  .form-wrapper .form-group .form-item {
+    h4 {
+      font-size : 1.2rem;
+    }
+    p {
+      font-size : 0.9rem;
+    }
+  }
+  .form-container.login-container .form-wrapper.login-wrapper {
+    padding:20px 0;
+  }
+}

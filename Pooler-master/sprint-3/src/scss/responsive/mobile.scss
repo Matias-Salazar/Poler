@@ -1,0 +1,110 @@
+/*==========  Mobile ==========*/
+@media (max-width : 568px) {
+  html {
+    font-size : 10px;
+  }
+  /****************** Header.php ********************/
+  header {
+    height :100px;
+  }
+  .menu {
+    li {
+      font-size : 3.5vw;
+    }
+  }
+  .nav-buttons {
+    margin             : 0;
+    margin-top:-2px;
+    background-color   : white;
+    padding            : 10px;
+  }
+
+  /****************** How works **********************/
+  .how-works {
+    h2 {
+      margin    : 20px 0;
+      font-size : 5vw;
+    }
+    .how-works-wrapper {
+      .how-works-item {
+        h4 {
+          padding   : 10px 0;
+          font-size : 6vw;
+        }
+        p {
+          padding   : 10px 0;
+          font-size : 4vw;
+        }
+      }
+    }
+  }
+  /****************** Gallery pool **********************/
+  .gallery {
+    h2 {
+      font-size : 5vw;
+      margin    : 20px 0;
+    }
+    .gallery-wrapper {
+      margin : 40px 0;
+      .gallery-item {
+        .item-wrapper {
+          .descr-wrapper {
+            .title {
+              font-size : 4vw;
+            }
+            .desc-text {
+              font-size : 2.5vw;
+            }
+          }
+          .date-wrapper {
+            font-size : 2.5vw;
+          }
+          .category-wrapper {
+            font-size : 2.5vw;
+          }
+          .user {
+            font-size : 2.8vw;
+          }
+          .btn-more {
+            a {
+              font-size : 5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+  /****************** Register.php and login.php **********************/
+  .form-container {
+    .form-wrapper {
+      padding       : 35px 10px;
+      .form-group {
+        margin-bottom : 20px;
+      }
+      .form-group:nth-child(5) {
+        margin-bottom : 10px;
+      }
+    }
+  }
+  .form-wrapper .form-group .form-item > input {
+    font-size : 1.2rem;
+  }
+  .form-wrapper .form-group p.error {
+    font-size : 0.8rem;
+  }
+  .form-wrapper .form-group .form-item {
+    h4 {
+      font-size : 1.2rem;
+    }
+    p {
+      font-size : 0.9rem;
+    }
+  }
+  .form-container.login-container .form-wrapper.login-wrapper {
+    padding:50px 0;
+  }
+  /****************** Faq.php **********************/
+  .faq .faq-wrapper > p, li {
+    font-size :1.7rem;
+  }
+}

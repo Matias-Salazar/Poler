@@ -1,0 +1,52 @@
+.hero {
+  position        : relative;
+  height          : 100vh;
+  background      : url("../assets/hero.jpg") no-repeat fixed center;
+  background-size : cover;
+  .bg-opacity {
+    position         : absolute;
+    top              : 0;
+    bottom           : 0;
+    left             : 0;
+    right            : 0;
+    background-color : rgba(0, 0, 0, .3);
+  }
+  .hero-wrapper {
+    @include center-both;
+    width       : 90%;
+    text-shadow : 2px 2px 4px #0f0f0f;
+    h1 {
+      text-align  : center;
+      font-family : $font-logo;
+      font-weight : bold;
+      color       : white;
+      span {
+        color : $color-secundario;
+      }
+    }
+    p {
+      text-align  : center;
+      font-family : $font-principal;
+      line-height : 2;
+      color       : white;
+    }
+    a {
+      @include center-hz;
+      button {
+        padding : 2vh 6vh;
+      }
+    }
+  }
+}
+.hero-text {
+  background-color : $color-secundario;
+  .hero-wrapper {
+    font-family : $font-principal;
+  }
+  h3 {
+    font-weight : bold;
+  }
+  p {
+    line-height : 1.5;
+  }
+}

@@ -1,0 +1,666 @@
+/*============ Modules ============*/
+.logo-color-principal {
+  color: #FF2E63;
+  font-style: italic; }
+
+.logo-color-secundario {
+  color: #08D9D6;
+  font-style: italic; }
+
+.btn-principal {
+  color: white;
+  outline: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: all .1s;
+  -moz-transition: all .1s;
+  transition: all .1s;
+  background-color: #FF2E63;
+  border: #FF2E63;
+  cursor: pointer; }
+
+.btn-secondary {
+  color: #FF2E63;
+  outline: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: all .1s;
+  -moz-transition: all .1s;
+  transition: all .1s;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid #FF2E63; }
+
+html {
+  height: 100%;
+  position: relative;
+  font-size: 16px;
+  overflow-x: hidden; }
+
+a {
+  text-decoration: none; }
+
+/*++++++++++ Faq.html ***************/
+.faq {
+  position: relative;
+  padding-top: 70px; }
+  .faq .faq-wrapper {
+    padding: 25px 20px; }
+    .faq .faq-wrapper h1 {
+      font-size: 20px;
+      margin: 0;
+      color: white;
+      background-color: #FF2E63;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px; }
+    .faq .faq-wrapper p, .faq .faq-wrapper ul, .faq .faq-wrapper ol {
+      padding: 20px;
+      height: 120px;
+      margin: 0;
+      border-left: 1px solid #FF2E63;
+      border-bottom: 1px solid #FF2E63;
+      border-right: 1px solid #FF2E63;
+      line-height: 1.5;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
+
+/*========== Header ===============*/
+header {
+  height: 50px;
+  position: relative; }
+
+nav {
+  background-color: white;
+  margin: 0 !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-shadow: 0 2px 10px black;
+  -moz-box-shadow: 0 2px 10px black;
+  box-shadow: 0 2px 10px black; }
+
+.logo {
+  padding: 5px 0 5px 5px; }
+  .logo img {
+    height: 40px; }
+
+.menu {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .menu li {
+    padding: 0 2vw; }
+    .menu li a {
+      text-decoration: none;
+      color: #FF2E63;
+      font-weight: bold; }
+
+.nav-buttons {
+  padding: 0 5px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif; }
+  .nav-buttons a {
+    width: 45%; }
+    .nav-buttons a .btn-principal, .nav-buttons a .btn-secondary {
+      width: 100%;
+      height: 30px; }
+    .nav-buttons a button:hover {
+      -webkit-box-shadow: 0 15px 15px -10px grey;
+      -moz-box-shadow: 0 15px 15px -10px grey;
+      box-shadow: 0 15px 15px -10px grey; }
+    .nav-buttons a button:active {
+      -webkit-transform: translateY(1px);
+      -moz-transform: translateY(1px);
+      transform: translateY(1px); }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("../assets/hero.jpg") no-repeat fixed center;
+  background-size: cover;
+  z-index: 20; }
+  .hero .bg-opacity {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .hero .hero-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    width: 90%;
+    text-shadow: 2px 2px 4px #0f0f0f; }
+    .hero .hero-wrapper h1 {
+      text-align: center;
+      font-family: "Poiret One", cursive;
+      font-weight: bold;
+      color: white; }
+      .hero .hero-wrapper h1 span {
+        color: #08D9D6; }
+    .hero .hero-wrapper p {
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      line-height: 2;
+      color: white; }
+    .hero .hero-wrapper a {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%); }
+      .hero .hero-wrapper a button {
+        padding: 2vh 6vh; }
+
+.hero-text {
+  background-color: #08D9D6; }
+  .hero-text .hero-wrapper {
+    font-family: "Montserrat", sans-serif; }
+  .hero-text h3 {
+    font-weight: bold; }
+  .hero-text p {
+    line-height: 1.5; }
+
+/*======== How works ==========*/
+.how-works {
+  text-align: center;
+  font-family: "Montserrat", sans-serif; }
+  .how-works h2 {
+    font-weight: bold;
+    color: #FF2E63;
+    font-size: 1.6rem; }
+  .how-works .how-works-wrapper {
+    margin: 40px 0; }
+    .how-works .how-works-wrapper .how-works-item {
+      padding: 0 50px; }
+      .how-works .how-works-wrapper .how-works-item h4 {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #08D9D6; }
+      .how-works .how-works-wrapper .how-works-item p {
+        font-size: 1rem; }
+
+/*========== Gallery ==============*/
+.gallery {
+  font-family: "Montserrat", sans-serif; }
+  .gallery h2 {
+    text-align: center;
+    color: #FF2E63; }
+  .gallery .gallery-wrapper .gallery-item .item-wrapper {
+    position: relative;
+    -webkit-box-shadow: 0 2px 4px #acacac;
+    -moz-box-shadow: 0 2px 4px #acacac;
+    box-shadow: 0 2px 4px #acacac; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .img-wrapper img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper {
+      padding: 20px 30px; }
+      .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .title {
+        color: #FF2E63;
+        padding: 10px 0; }
+      .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .desc-text {
+        padding: 10px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .date-wrapper {
+      padding: 10px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .category-wrapper {
+      padding: 10px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .user {
+      padding: 10px 0;
+      font-weight: bold; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .btn-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      border: none;
+      background-color: #FF2E63;
+      outline: none;
+      height: 45px;
+      width: 45px;
+      -webkit-box-shadow: 0 2px 4px #acacac;
+      -moz-box-shadow: 0 2px 4px #acacac;
+      box-shadow: 0 2px 4px #acacac;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%; }
+      .gallery .gallery-wrapper .gallery-item .item-wrapper .btn-more a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 2vw; }
+
+/*========== Footer ===============*/
+footer, .footer-login, .footer-faq {
+  background-color: #252A34;
+  font-family: "Poiret One", cursive;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%; }
+  footer div, .footer-login div, .footer-faq div {
+    margin: 0; }
+    footer div .copyright, .footer-login div .copyright, .footer-faq div .copyright {
+      color: white;
+      font-size: 10px;
+      margin: 0;
+      padding: 35px 0; }
+
+.footer-login {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+/**************** Register.php and Login.php  *****************/
+.form-container {
+  background-color: rgba(255, 46, 99, 0.8); }
+
+.form-container.login-container {
+  background-color: #08D9D6; }
+
+.form-wrapper {
+  background-color: white;
+  -webkit-box-shadow: 0 2px 10px black;
+  -moz-box-shadow: 0 2px 10px black;
+  box-shadow: 0 2px 10px black;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 20px 0; }
+  .form-wrapper .form-row:nth-child(1) {
+    margin-right: 5px; }
+  .form-wrapper .form-group {
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid #FF2E63;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative; }
+    .form-wrapper .form-group .form-item {
+      position: relative;
+      display: block; }
+      .form-wrapper .form-group .form-item label {
+        position: absolute;
+        bottom: 2px; }
+      .form-wrapper .form-group .form-item input {
+        outline: none;
+        width: 90%;
+        border: none;
+        height: 24px;
+        color: #252A34; }
+      .form-wrapper .form-group .form-item span {
+        position: absolute;
+        right: 1px;
+        color: #FF2E63;
+        font-size: 20px;
+        padding: 2px 0; }
+      .form-wrapper .form-group .form-item h4 {
+        color: grey;
+        margin: 5px 0; }
+      .form-wrapper .form-group .form-item p {
+        color: grey;
+        margin: 10px 0;
+        font-size: 12px; }
+      .form-wrapper .form-group .form-item .select-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .form-wrapper .form-group .form-item .select-container .select-wrapper {
+          width: 33%;
+          height: 30px;
+          position: relative;
+          padding: 0 5px; }
+          .form-wrapper .form-group .form-item .select-container .select-wrapper .date-select {
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+            background-color: transparent;
+            text-align: center;
+            border: none;
+            border: 1px solid #FF2E63;
+            padding: 10px; }
+            .form-wrapper .form-group .form-item .select-container .select-wrapper .date-select option {
+              padding: 0 10px; }
+          .form-wrapper .form-group .form-item .select-container .select-wrapper span {
+            position: absolute;
+            right: 15px;
+            top: 8px;
+            font-size: 14px;
+            pointer-events: none; }
+    .form-wrapper .form-group p.error {
+      position: absolute;
+      color: #FF2E63;
+      font-size: 10px;
+      top: 110%; }
+  .form-wrapper .form-group:nth-child(5) {
+    border: none; }
+  .form-wrapper .terms-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px; }
+    .form-wrapper .terms-wrapper .terms {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      margin-bottom: 10px; }
+      .form-wrapper .terms-wrapper .terms input {
+        background: transparent;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #FF2E63; }
+      .form-wrapper .terms-wrapper .terms a {
+        padding-left: 5px;
+        text-decoration: none;
+        color: #FF2E63; }
+    .form-wrapper .terms-wrapper p.error {
+      position: absolute;
+      font-size: 12px;
+      top: 70%; }
+  .form-wrapper .register-btn .btn-register {
+    width: 100%;
+    height: 40px;
+    display: inline;
+    font-size: 14px; }
+
+.login-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .login-container .login-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
+/* Medium Devices, Desktops */
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px; }
+  /************** Hero.php *************************/
+  .hero .hero-wrapper h1 {
+    padding: 10px;
+    font-size: 6vw; }
+  .hero .hero-wrapper p {
+    padding: 10px;
+    font-size: 2vw; }
+  .hero-text .hero-wrapper {
+    padding: 15px; }
+    .hero-text .hero-wrapper h3 {
+      font-size: 2.6vw; }
+    .hero-text .hero-wrapper p {
+      font-size: 1.5vw;
+      padding: 10px 0; }
+  /****************** How works **********************/
+  .how-works h2 {
+    margin: 20px 0;
+    font-size: 2.5vw; }
+  .how-works .how-works-wrapper .how-works-item h4 {
+    padding: 10px 0;
+    font-size: 2.5vw; }
+  .how-works .how-works-wrapper .how-works-item p {
+    padding: 10px 0;
+    font-size: 1.5vw; }
+  /****************** Gallery pool *******************/
+  .gallery h2 {
+    font-size: 2.5vw;
+    margin: 20px 0; }
+  .gallery .gallery-wrapper {
+    margin: 40px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .title {
+      font-size: 2vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .desc-text {
+      font-size: 1.3vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .date-wrapper {
+      font-size: 1.3vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .category-wrapper {
+      font-size: 1.3vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .user {
+      font-size: 1.6vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .btn-more a {
+      font-size: 3vw; }
+  /****************** Register.php **********************/
+  .form-container .form-wrapper {
+    padding: 10px; }
+    .form-container .form-wrapper .form-group {
+      margin-bottom: 20px; }
+    .form-container .form-wrapper .form-group:nth-child(5) {
+      margin-bottom: 10px; } }
+
+.form-wrapper .form-group .form-item > input {
+  font-size: 1.2rem; }
+
+.form-wrapper .form-group p.error {
+  font-size: 0.7rem; }
+
+.form-wrapper .form-group .form-item h4 {
+  font-size: 1.2rem; }
+
+.form-wrapper .form-group .form-item p {
+  font-size: 0.9rem; }
+
+/* Large Devices, Wide Screens */
+@media (min-width: 1025px) {
+  html {
+    font-size: 18px; }
+  /************** Hero.php *************************/
+  .hero .hero-wrapper {
+    width: 70%; }
+    .hero .hero-wrapper h1 {
+      padding: 8px;
+      font-size: 6vw; }
+    .hero .hero-wrapper p {
+      padding: 10px;
+      font-size: 1.6vw; }
+    .hero .hero-wrapper a button {
+      font-size: 1vw; }
+  .hero-text .hero-wrapper {
+    padding: 50px; }
+    .hero-text .hero-wrapper h3 {
+      font-size: 2vw; }
+    .hero-text .hero-wrapper p {
+      font-size: 1vw;
+      padding: 30px 0; }
+  /****************** How works **********************/
+  .how-works h2 {
+    margin: 30px 0;
+    font-size: 2.5vw; }
+  .how-works .how-works-wrapper .how-works-item h4 {
+    padding: 10px 0;
+    font-size: 1.5vw; }
+  .how-works .how-works-wrapper .how-works-item p {
+    padding: 10px 0;
+    font-size: 1vw; }
+  /****************** Gallery pool *******************/
+  .gallery h2 {
+    font-size: 2.5vw;
+    margin: 20px 0; }
+  .gallery .gallery-wrapper {
+    margin: 40px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .title {
+      font-size: 1.5vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .desc-text {
+      font-size: 1vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .date-wrapper {
+      font-size: 1vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .category-wrapper {
+      font-size: 1vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .user {
+      font-size: 1.3vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .btn-more a {
+      font-size: 2vw; }
+  /****************** Register.php **********************/
+  .form-container .form-wrapper {
+    padding: 30px; }
+    .form-container .form-wrapper .form-group {
+      margin-bottom: 30px;
+      padding: 5px; }
+    .form-container .form-wrapper .form-group:nth-child(5) {
+      padding-top: 0; }
+  .form-wrapper .form-group .form-item > input {
+    font-size: 1rem; }
+  .form-wrapper .form-group p.error {
+    font-size: 0.6rem; }
+  .form-wrapper .form-group .form-item h4 {
+    font-size: 0.9rem; }
+  .form-wrapper .form-group .form-item p {
+    font-size: 0.6rem; }
+  .form-container.login-container .form-wrapper.login-wrapper {
+    padding: 50px 0; } }
+
+/* Small Devices, Tablets */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; }
+  /************** Hero.php *************************/
+  .hero .hero-wrapper h1 {
+    padding: 10px;
+    font-size: 12vh; }
+  .hero .hero-wrapper p {
+    padding: 10px;
+    font-size: 2.8vw; }
+  .hero-text .hero-wrapper {
+    padding: 20px; }
+    .hero-text .hero-wrapper h3 {
+      font-size: 4.5vw; }
+    .hero-text .hero-wrapper p {
+      font-size: 2.4vw;
+      padding: 10px 0; }
+    .hero-text .hero-wrapper a button {
+      font-size: 5vw; }
+  /****************** How works **********************/
+  .how-works h2 {
+    margin: 20px 0;
+    font-size: 4.5vw; }
+  .how-works .how-works-wrapper .how-works-item h4 {
+    padding: 10px 0;
+    font-size: 3.5vw; }
+  .how-works .how-works-wrapper .how-works-item p {
+    padding: 10px 0;
+    font-size: 2.5vw; }
+  /****************** Gallery pool *******************/
+  .gallery h2 {
+    font-size: 4.5vw;
+    margin: 20px 0; }
+  .gallery .gallery-wrapper {
+    margin: 40px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .title {
+      font-size: 3vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .desc-text {
+      font-size: 2vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .date-wrapper {
+      font-size: 2vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .category-wrapper {
+      font-size: 2vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .user {
+      font-size: 2.3vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .btn-more a {
+      font-size: 4vw; }
+  /****************** Register.php and login.php **********************/
+  .form-container .form-wrapper {
+    padding: 10px; }
+    .form-container .form-wrapper .form-group {
+      margin-bottom: 20px; }
+    .form-container .form-wrapper .form-group:nth-child(5) {
+      margin-bottom: 10px; }
+  .form-wrapper .form-group .form-item > input {
+    font-size: 1.2rem; }
+  .form-wrapper .form-group p.error {
+    font-size: 0.8rem; }
+  .form-wrapper .form-group .form-item h4 {
+    font-size: 1.2rem; }
+  .form-wrapper .form-group .form-item p {
+    font-size: 0.9rem; }
+  .form-container.login-container .form-wrapper.login-wrapper {
+    padding: 20px 0; } }
+
+/*==========  Mobile ==========*/
+@media (max-width: 568px) {
+  html {
+    font-size: 10px; }
+  /****************** Header.php ********************/
+  header {
+    height: 100px; }
+  .menu li {
+    font-size: 3.5vw; }
+  .nav-buttons {
+    margin: 0;
+    margin-top: -2px;
+    background-color: white;
+    padding: 10px; }
+  /****************** How works **********************/
+  .how-works h2 {
+    margin: 20px 0;
+    font-size: 5vw; }
+  .how-works .how-works-wrapper .how-works-item h4 {
+    padding: 10px 0;
+    font-size: 6vw; }
+  .how-works .how-works-wrapper .how-works-item p {
+    padding: 10px 0;
+    font-size: 4vw; }
+  /****************** Gallery pool **********************/
+  .gallery h2 {
+    font-size: 5vw;
+    margin: 20px 0; }
+  .gallery .gallery-wrapper {
+    margin: 40px 0; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .title {
+      font-size: 4vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .descr-wrapper .desc-text {
+      font-size: 2.5vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .date-wrapper {
+      font-size: 2.5vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .category-wrapper {
+      font-size: 2.5vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .user {
+      font-size: 2.8vw; }
+    .gallery .gallery-wrapper .gallery-item .item-wrapper .btn-more a {
+      font-size: 5vw; }
+  /****************** Register.php and login.php **********************/
+  .form-container .form-wrapper {
+    padding: 35px 10px; }
+    .form-container .form-wrapper .form-group {
+      margin-bottom: 20px; }
+    .form-container .form-wrapper .form-group:nth-child(5) {
+      margin-bottom: 10px; }
+  .form-wrapper .form-group .form-item > input {
+    font-size: 1.2rem; }
+  .form-wrapper .form-group p.error {
+    font-size: 0.8rem; }
+  .form-wrapper .form-group .form-item h4 {
+    font-size: 1.2rem; }
+  .form-wrapper .form-group .form-item p {
+    font-size: 0.9rem; }
+  .form-container.login-container .form-wrapper.login-wrapper {
+    padding: 50px 0; }
+  /****************** Faq.php **********************/
+  .faq .faq-wrapper > p, li {
+    font-size: 1.7rem; } }
