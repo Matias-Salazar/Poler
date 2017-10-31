@@ -1,5 +1,6 @@
 <?php
     require 'function.php';
+    require_once('clases/RegisterValidation');
     //*********************** Validacion de datos ***************************//
     if ($_POST) {
         //variables con todos los POST
@@ -13,29 +14,7 @@
         $year = $_POST['year'];
         $terms = $_POST['terms'];
         $submit = $_POST['submit'];
-        // Array donde se guardan errores
-         $errores = [];
-        if (!checkstring ($name, 3)) {
-            $errores['name'] = 'El nombre no puede estar vacio y debe tener mas de 3 caracteres';
-        }
-        if (!checkstring ($lastName, 3)) {
-            $errores['lastname'] = 'El apellido no puede estar vacio y debe tener mas de 3 caracteres';
-        }
-        if (!filter_var ($email, FILTER_VALIDATE_EMAIL)) {
-            $errores['email'] = 'El formato de email es incorrecto';
-        }
-        if (!checkPass ($pass)) {
-            $errores['pass'] = 'La contraseña debe tener mas de 8 caracteres, contener letras y numeros, mayusculas y minusculas';
-        }
-        if (!checkPass ($passConfirm) && $passConfirm !== $pass) {
-            $errores['passConfirm'] = 'La contraseñas deben coincidir, debe tener mas de 8 caracteres, contener letras y numeros y mayusculas y minusculas';
-        }
-        if (checkAge ($year,$month,$day) < 18) {
-            $errores['date'] = 'Tienes que ser mayor de edad para poder registrarte';
-        }
-        if (!isset($terms)) {
-           $errores['terms'] = 'Debes aceptar los terminos y condiciones de uso';
-        }
+
 
         // Guarda los datos en json si no hay errores en el registro
         if (count ($errores) == 0) {
