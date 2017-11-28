@@ -19,7 +19,7 @@
 
 [class~="col"],
 [class*="col_"] {
-    flex: 1 1 0%; }
+    flex: 1 1 0; }
 
 [class*="col-"] {
     flex: none; }

@@ -1,0 +1,40 @@
+// Variables
+@import 'variables';
+.logo-color-principal {
+  color      : $color-principal;
+  font-style : italic;
+}
+.logo-color-secundario {
+  color      : $color-secundario;
+  font-style : italic;
+}
+.btn-principal {
+  color                 : white;
+  outline               : none;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+  font-family           : $font-principal;
+  font-weight           : bold;
+  -webkit-transition    : all .1s;
+  -moz-transition       : all .1s;
+  transition            : all .1s;
+  background-color      : $color-principal;
+  border                : $color-principal;
+  cursor                : pointer;
+}
+.btn-secondary {
+  color                 : $color-principal;
+  outline               : none;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+  font-family           : $font-principal;
+  font-weight           : bold;
+  -webkit-transition    : all .1s;
+  -moz-transition       : all .1s;
+  transition            : all .1s;
+  background-color      : white;
+  cursor                : pointer;
+  border                : 1px solid $color-principal;
+}

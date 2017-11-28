@@ -1,5 +1,7 @@
 <?php
-    require  ('function.php');
+    require_once  ('function.php');
+    require_once ('classes/repositoryUserSQL.php');
+    require_once ('classes/validationLogin.php');
     // obtengo del json todos los usuarios
     $users = file_get_contents ('user.json');
     // Creo un array a partir del json
@@ -7,20 +9,14 @@
     // Elimino la ultima posicion dado que esta vacia
     array_pop ($arrayUsers);
 
+    $repoUser = new RepositoryUserSQL();
+
     if ($_POST) {
-        $errores = [];
-        // Validacion username
-        if (!checkstring ($_POST['username'],1)) {
-            $errores['username'] = 'El campo no puede estar vacio';
-        }
-        elseif (!filter_var ($_POST['username'], FILTER_VALIDATE_EMAIL)) {
-            $errores['username'] = 'El mail no es valido';
-        }
-        // Validacion password
-        if(!checkstring ($_POST['password'],1)) {
-            $errores['password'] = 'El campo no puede estar vacio';
-        }
+        $validate = new ValidationLogin();
+        $errores = $validate->validate ($_POST,$repoUser);
     }
+
+    var_dump ($errores);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +26,18 @@
 </head>
 <body>
     <header>
-        <?php require 'header.php' ?>
+        <nav class="grid">
+            <div class="col-1_xs-1 logo"><a href="index.php"><img class="img-responsive" src="assets/logo-pooler.png" alt="logo"></a></div>
+            <ul class="col-7_xs-11 menu">
+                <li><a class="nav-link" href="index.php#hero">¿Qué es?</a></li>
+                <li><a class="nav-link" href="index.php#how-works">¿Cómo funciona?</a></li>
+                <li><a class="nav-link" href="index.php#faq">Faq</a></li>
+            </ul>
+            <div class="col-4_xs-12 nav-buttons">
+                <a href="register.php"><button class="btn-principal register-btn">Registrate</button></a>
+                <a href="login.php"><button class="btn-secondary">Ingresa</button></a>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="grid grid-center form-container login-container">
@@ -56,15 +63,6 @@
                         <?php if (!empty($errores['password'])) { ?>
                         <p class="error"> <?php echo $errores['password']; } ?> </p>
                     </div>
-                    <div class="grid col-12_x2-12 terms-wrapper">
-                        <div class="terms">
-                            <input type="checkbox" name="terms">
-                            <a href=""><span>Recordarme</span></a>
-                        </div>
-                        <?php if (!empty($errores['terms'])) { ?>
-                        <p class="error"> <?php echo $errores['terms'];
-                                } ?></p>
-                    </div>
                     <div class="col-8 grid-spaceBetween register-btn" data-push-left="off-2">
                         <input type="submit" value="Entrar" class="btn-principal btn-register">
                     </div>
@@ -73,7 +71,9 @@
         </div>
     </main>
     <footer class="footer-login">
-        <?php require 'footer.php'?>
+        <div class="col-10" data-push-left="off-1">
+            <h4 class="copyright">&#9400 2017 <span class="logo-color-principal">Pooler</span></h4>
+        </div>
     </footer>
 </body>
 </html>

@@ -3,16 +3,19 @@
   height          : 100vh;
   background      : url("../assets/hero.jpg") no-repeat fixed center;
   background-size : cover;
+  z-index         : 20;
   .bg-opacity {
     position         : absolute;
     top              : 0;
     bottom           : 0;
     left             : 0;
     right            : 0;
+    z-index          : 10;
     background-color : rgba(0, 0, 0, .3);
   }
   .hero-wrapper {
     @include center-both;
+    z-index     : 30;
     width       : 90%;
     text-shadow : 2px 2px 4px #0f0f0f;
     h1 {

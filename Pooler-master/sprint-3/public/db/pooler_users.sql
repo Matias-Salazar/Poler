@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `pooler` /*!40100 DEFAULT CHARACTER SET big5 */;
+USE `pooler`;
 -- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: localhost    Database: pooler
@@ -28,10 +30,13 @@ CREATE TABLE `users` (
   `lastname` varchar(128) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
+  `day_birth` int(11) NOT NULL,
+  `month_birth` int(11) NOT NULL,
+  `year_birth` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=big5;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +45,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (2,'fernando','colom','colomfernando@gmail.com','$1$KpEDytEc$.l4zGzN5/3z0tiHukGSfN/',13,6,1985),(3,'Matias','Salazar','matias@matias.com','$1$nhhF0qyR$JAVZegWIYiSR/OVl6TemJ/',8,8,1961),(15,'juan','alonso','juan.alonso@gmail.com','$2y$10$75qYWH1.0LU6wqZM9T4dcuK/L9qpPVqXsivdRe',4,8,1977);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-18 11:26:52
+-- Dump completed on 2017-10-23  9:56:57

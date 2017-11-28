@@ -57,7 +57,7 @@ html {
 a {
   text-decoration: none; }
 
-/*++++++++++ Faq.html ***************/
+/*************** Faq.html ***************/
 .faq {
   position: relative;
   padding-top: 70px; }
@@ -84,7 +84,8 @@ a {
 
 /*========== Header ===============*/
 header {
-  height: 50px; }
+  height: 50px;
+  position: relative; }
 
 nav {
   background-color: white;
@@ -140,13 +141,15 @@ nav {
   position: relative;
   height: 100vh;
   background: url("../assets/hero.jpg") no-repeat fixed center;
-  background-size: cover; }
+  background-size: cover;
+  z-index: 20; }
   .hero .bg-opacity {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 10;
     background-color: rgba(0, 0, 0, 0.3); }
   .hero .hero-wrapper {
     position: absolute;
@@ -155,6 +158,7 @@ nav {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    z-index: 30;
     width: 90%;
     text-shadow: 2px 2px 4px #0f0f0f; }
     .hero .hero-wrapper h1 {
@@ -216,7 +220,8 @@ nav {
     position: relative;
     -webkit-box-shadow: 0 2px 4px #acacac;
     -moz-box-shadow: 0 2px 4px #acacac;
-    box-shadow: 0 2px 4px #acacac; }
+    box-shadow: 0 2px 4px #acacac;
+    height: 450px; }
     .gallery .gallery-wrapper .gallery-item .item-wrapper .img-wrapper img {
       display: block;
       margin: auto;
@@ -260,10 +265,15 @@ nav {
         font-weight: bold;
         font-size: 2vw; }
 
-/*========== Footer ===============*/
+/* ========== Footer ===============*/
 footer, .footer-login, .footer-faq {
   background-color: #252A34;
-  font-family: "Poiret One", cursive; }
+  font-family: "Poiret One", cursive;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%; }
   footer div, .footer-login div, .footer-faq div {
     margin: 0; }
     footer div .copyright, .footer-login div .copyright, .footer-faq div .copyright {

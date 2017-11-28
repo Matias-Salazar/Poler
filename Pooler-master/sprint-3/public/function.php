@@ -1,27 +1,7 @@
 <?php
-    function checkstring($str, $min = false) {
-        // Quita espacios en el string
-        $str = trim ($str);
-        // si $str no esta vacio
-        if (!empty($str)) {
-            // si el largo de $str no esta vacio.
-            if (!empty($min)) {
-                // si el string cumple con el minimo de caracteres en $min.
-                if (strlen ($str) >= $min) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
 
     function checkPass($pass) {
-        if (!checkstring ($pass, 8)) {
+        if (!strlen ($pass < 8)) {
             return false;
         }
         $regex = '~^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])~m';
@@ -41,7 +21,7 @@
         return $year_dif;
     }
     // Crea array con los datos de usuario
-    function newUser($data) {
+    function toArray($data) {
         return [
             'name' => $_POST['name'],
             'lastname' => $_POST['lastname'],

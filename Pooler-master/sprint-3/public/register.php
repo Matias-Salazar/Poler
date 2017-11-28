@@ -1,61 +1,55 @@
 <?php
-    require 'function.php';
-    require_once('clases/RegisterValidation');
+    require_once ('classes/validationRegister.php');
+    require_once ('classes/user.php');
+    require_once ('classes/repositoryUserSQL.php');
+    require_once ('classes/repoUser.php');
+
+    $repoUser = new RepositoryUserSQL();
     //*********************** Validacion de datos ***************************//
     if ($_POST) {
-        //variables con todos los POST
-        $name = $_POST['name'];
-        $lastName = $_POST['lastname'];
-        $email = $_POST['email'];
-        $pass = password_hash ($_POST['password'], PASSWORD_DEFAULT);
-        $passConfirm = password_hash($_POST['pass-confirm'], PASSWORD_DEFAULT);
-        $day = $_POST['day'];
-        $month = $_POST['month'];
-        $year = $_POST['year'];
-        $terms = $_POST['terms'];
-        $submit = $_POST['submit'];
+        // Instance for form validation
+        $validate = new ValidatorRegister();
+        $errores = $validate -> validate ($_POST,$repoUser);
+        // Save user if there not errors input
+        if (empty($errores)) {
+            // Create User instance
+            $user = new User($_POST['name'],
+                $_POST['lastname'],
+                $_POST['email'],
+                $_POST['password'],
+                $_POST['day'],
+                $_POST['month'],
+                $_POST['year']
+            );
 
+            // Connect and save user in the database
+            $user->setPass ($_POST['password']);
+            $user->save ($repoUser);
 
-        // Guarda los datos en json si no hay errores en el registro
-        if (count ($errores) == 0) {
-            // Conexion a db
-            $dsn = 'mysql:host=localhost;dbname=pooler;
-            charset=utf8mb4;port:8889';
-            $db_user = 'root';
-            $db_pass = 'root';
-
-            try {
-                $db = new PDO($dsn, $db_user, $db_pass);
-                $stmt = $db->prepare ("INSERT INTO users (name,lastname,email,password,day_birth,month_birth,year_birth) VALUES (:name, :lastname, :email, :password, :day_birth,:month_birth,:year_birth)");
-
-                $stmt->execute (array (
-                    ':name' => $name,
-                    ':lastname' => $lastName,
-                    ':email' => $email,
-                    ':password'=> $pass,
-                    ':day_birth'=> $day,
-                    ':month_birth'=> $month,
-                    ':year_birth' => $year
-                ));
-            }
-            catch (PDOException $exception) {
-                echo $exception->getMessage ();
-                $usuario = newUser ($_POST);
-                saveUser ($usuario);
-            }
         }
-
     }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <?php require 'meta-head.php'?>
+    <?php require 'meta-head.php' ?>
     <title>Login</title>
 </head>
 <body>
     <header>
-        <?php require 'header.php' ?>
+        <nav class="grid">
+            <div class="col-1_xs-1 logo"><a href="index.php"><img class="img-responsive" src="assets/logo-pooler.png"
+                                                                  alt="logo"></a></div>
+                <ul class="col-7_xs-11 menu">
+                    <li><a class="nav-link" href="index.php#hero">¿Qué es?</a></li>
+                    <li><a class="nav-link" href="index.php#how-works">¿Cómo funciona?</a></li>
+                    <li><a href="index.php#faq">Faq</a></li>
+                </ul>
+                <div class="col-4_xs-12 nav-buttons ">
+                    <a href="register.php"><button class="btn-principal register-btn">Registrate</button></a>
+                    <a href="login.php"><button class="btn-secondary">Ingresa</button></a>
+                </div>
+        </nav>
     </header>
     <main>
         <div class="grid grid-center form-container">
@@ -66,7 +60,8 @@
                     <div class="col form-group form-row">
                         <div class="form-item">
                             <label for="name"></label>
-                            <input type="text" name="name" id="name" placeholder="Nombre" value="<?= (isset($_POST['name'])) ? $_POST['name'] :'';?>">
+                            <input type="text" name="name" id="name" placeholder="Nombre"
+                                   value="<?= (isset($_POST['name'])) ? $_POST['name'] : ''; ?>">
                             <span><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
                         <?php if (!empty($errores['name'])) { ?>
@@ -76,7 +71,8 @@
                     <div class="col form-group form-row">
                         <div class="form-item">
                             <label for="lastname"></label>
-                            <input type="text" name="lastname" id="lastname" placeholder="Apellido" value="<?= (isset($_POST['lastname'])) ? $_POST['lastname'] :'';?>">
+                            <input type="text" name="lastname" id="lastname" placeholder="Apellido"
+                                   value="<?= (isset($_POST['lastname'])) ? $_POST['lastname'] : ''; ?>">
                             <span><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
                         <?php if (!empty($errores['lastname'])) { ?>
@@ -87,7 +83,8 @@
                     <div class="col-12 form-group">
                         <div class="form-item">
                             <label for="email"></label>
-                            <input type="email" name="email" id="email" placeholder="Email" value="<?= (isset($_POST['email'])) ? $_POST['email'] :'';?>">
+                            <input type="email" name="email" id="email" placeholder="Email"
+                                   value="<?= (isset($_POST['email'])) ? $_POST['email'] : ''; ?>">
                             <span><i class="fa fa-at" aria-hidden="true"></i></span>
                         </div>
                         <?php if (!empty($errores['email'])) { ?>
@@ -107,7 +104,8 @@
                     <div class="col-12 form-group">
                         <div class="form-item">
                             <label for="pass-confirm"></label>
-                            <input type="password" name="pass-confirm" id="pass-confirm" placeholder="Confirmar contraseña">
+                            <input type="password" name="pass-confirm" id="pass-confirm"
+                                   placeholder="Confirmar contraseña">
                             <span><i class="fa fa-lock" aria-hidden="true"></i></span>
                         </div>
                         <?php if (!empty($errores['passConfirm'])) { ?>
@@ -161,7 +159,8 @@
                     </div>
                     <div class="grid col-12_x2-12 terms-wrapper">
                         <div class="terms">
-                            <input type="checkbox" name="terms">
+                            <label for="terms"></label>
+                            <input type="checkbox" id="terms" name="terms">
                             <a href=""><span>He leído y acepto los términos y condiciones de uso</span></a>
                         </div>
                         <?php if (!empty($errores['terms'])) { ?>
@@ -169,14 +168,21 @@
                                 } ?></p>
                     </div>
                     <div class="col-8 grid-spaceBetween register-btn" data-push-left="off-2">
-                        <input type="submit" name="submit" value="<?= (isset($submit) && count ($errores) == 0) ? 'Enviado' :  'Registrate' ; ?>" id="registerBtn" class="<?= (isset($submit) && count ($errores) == 0) ? 'btn-principal-succes' :  'btn-principal' ; ?> btn-register">
+                        <input type="submit" name="submit"
+                               value="<?= (isset($_POST['submit']) && count ($errores) == 0) ? 'Enviado' : 'Registrate'; ?>"
+                               id="registerBtn"
+                               class="<?= (isset($_POST['submit']) && count ($errores) == 0) ? 'btn-principal-succes' : 'btn-principal'; ?> btn-register">
                     </div>
                 </div>
             </form>
         </div>
     </main>
     <footer class="footer-register">
-        <?php require 'footer.php'?>
+        <div class="grid_12 footer">
+            <div class="col-10" data-push-left="off-1">
+                <h4 class="copyright">&#9400 2017 <span class="logo-color-principal">Pooler</span></h4>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

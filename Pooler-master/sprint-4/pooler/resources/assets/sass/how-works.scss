@@ -1,0 +1,18 @@
+.how-works {
+  font-family: $font-principal;
+  h2 {
+    font-weight: bold;
+  }
+  .how-works-wrapper {
+    margin: 20px 0;
+  }
+}
+.how-works-wrapper .how-works-item {
+  h4 {
+    font-size :2rem;
+    font-weight: bold;
+  }
+  p {
+    font-size :1.5rem;
+  }
+}
