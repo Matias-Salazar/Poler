@@ -19,6 +19,7 @@
 }
 .hero .hero-wrapper {
   z-index     : 30;
+  padding-top:45px;
   text-shadow : 2px 2px 4px #0f0f0f;
   h1 {
     text-align  : center;
@@ -46,6 +47,8 @@
     background-color: $color-secundario;
     color:white;
     font-size: 1.5rem;
+    padding: 20px;
+    height: 220px;
     h3 {
       font-weight: bold;
     }
@@ -53,4 +56,23 @@
       font-family :$font-principal;
     }
   }
+}
+ // Responsive
+
+/* Extra small devices tablets */
+@media only screen and (min-width: 480px) {
+
+}
+/* Small devices tablets */
+@media only screen and (min-width: 768px) {
+
+}
+/* Medium devices desktop */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* large devices wide screen */
+@media only screen and (min-width: 1200px) {
+
 }

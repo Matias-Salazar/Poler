@@ -2,13 +2,13 @@ nav {
   position         : fixed;
   background-color : white;
   font-family      : $font-principal;
-  width: 100%;
-  padding:5px 0;
-  z-index:50;
-  box-shadow: 0px 3px 5px #878787;
+  width            : 100%;
+  z-index          : 50;
+  box-shadow       : 0px 3px 5px #878787;
 }
 .logo {
-  padding:0;
+  padding : 5px;
+
   img {
     height : 40px;
   }
@@ -16,19 +16,20 @@ nav {
 .menu {
   display         : flex;
   justify-content : space-around;
-  align-content: center;
-  padding: 10px 0;
+  align-content   : center;
+  margin          : 0 10px;
+  padding         : 10px;
   li {
-    font-size :1.5rem;
+    font-size : 1.3rem;
     a {
-      color: $color-principal;
+      color : $color-principal;
     }
   }
 }
 .nav-buttons {
   display         : flex;
   justify-content : space-around;
-  padding: 5px;
+  padding         : 10px;
   a {
     width : 45%;
     .btn-principal, .btn-secondary {
@@ -36,4 +37,27 @@ nav {
       height : 30px;
     }
   }
+}
+// Responsive
+/* Extra small devices tablets */
+@media only screen and (min-width : 480px) {
+
+}
+/* Small devices tablets */
+@media only screen and (min-width : 768px) {
+  .nav-wrapper {
+    display     : flex;
+    align-items : center;
+  }
+  .menu > li {
+    font-size : 1.8rem;
+  }
+}
+/* Medium devices desktop */
+@media only screen and (min-width : 992px) {
+
+}
+/* large devices wide screen */
+@media only screen and (min-width : 1200px) {
+
 }

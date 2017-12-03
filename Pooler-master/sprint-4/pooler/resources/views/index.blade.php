@@ -14,17 +14,17 @@
         <header>
             <nav class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                        <div class="col-xs-2 logo"><a href="index.php"><img src="assets/logo-pooler.png" alt="logo"></a></div>
-                    <ul class="col-xs-10 col-md-6 menu">
-                        <li><a class="nav-link" href="#">¿Qué es?</a></li>
-                        <li><a class="nav-link" href="#">¿Cómo funciona?</a></li>
-                        <li><a class="nav-link" href="#">Faq</a></li>
-                    </ul>
-                    <div class="col-xs-12 col-md-4 nav-buttons">
-                        <a href="{{ route('register') }}"><button class="btn-principal register-btn">Registrate</button></a>
-                        <a href="{{ route('login') }}"><button class="btn-secondary">Ingresa</button></a>
-                    </div>
+                    <div class="col-xs-12 col-md-12 nav-wrapper">
+                        <div class="col-xs-1 logo"><a href="index.php"><img src="assets/logo-pooler.png" alt="logo"></a></div>
+                        <ul class="col-xs-10 col-sm-6 col-md-6 menu">
+                            <li><a class="nav-link" href="#">¿Qué es?</a></li>
+                            <li><a class="nav-link" href="#how-works">¿Cómo funciona?</a></li>
+                            <li><a class="nav-link" href="#">Faq</a></li>
+                        </ul>
+                        <div class="col-xs-12 col-sm-4 col-md-4 nav-buttons">
+                            <a href="{{ route('register') }}"><button class="btn-principal register-btn">Registrate</button></a>
+                            <a href="{{ route('login') }}"><button class="btn-secondary">Ingresa</button></a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -47,14 +47,14 @@
                 </div>
                 <div class="row">
                     <div class="hero-text">
-                        <div class="col-xs-12 col-md-6 hero-wrapper">
+                        <div class="col-xs-12 col-sm-6 col-md-6 hero-wrapper">
                             <h3>¿Qué es un <span class="logo-color-principal">Pooler</span> ?</h3>
                             <p><span class="logo-color-principal">Pooler</span> se le denomina a cada integrante de la red social. Así como alguien que crea un proyecto es Pooler,
                             también lo son las personas que se unen al mismo, creando un <span
                                         class="logo-color-principal">Pool</span> donde se agrupan varios Poolers  que
-                            comparten un mismo objetivo o un mismo proyecto.</p>
+                            comparten un mismo objetivo.</p>
                         </div>
-                        <div class="col-xs-12 col-md-6 hero-wrapper">
+                        <div class="col-xs-12 col-sm-6 col-md-6 hero-wrapper">
                             <h3>¿Qué es un <span class="logo-color-principal">Pool</span> ?</h3>
                             <p><span class="logo-color-principal">Pool</span> es una publicación de una idea o proyecto. Puede ser un viaje en auto hacia algun lugar, ir de compras,
                             armar una banda de música. Deberás especificar cuantos <span class="logo-color-principal">Poolers</span> necesitás, fechas, horarios, destino como
@@ -95,10 +95,10 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 pools-wrapper">
                         <h2 class="text-center">Descubrí otros Pools</h2>
-                        <div>
-                            <div class="col-xs-12 col-md-4 pool-wrapper">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="pool-wrapper">
                                 <img class="img-responsive" src="/assets/gallery-asset/gallery-1.jpg" alt="img-1">
                                 <div class="item-wrapper">
                                     <div class="desc-wrapper">
@@ -119,11 +119,59 @@
                                     <div class="btn-wrapper">
                                         <button><a href="">+</a></button>
                                     </div>
-
                                 </div>
                             </div>
-
-
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="pool-wrapper">
+                                <img class="img-responsive" src="/assets/gallery-asset/gallery-2.jpg" alt="img-1">
+                                <div class="item-wrapper">
+                                    <div class="desc-wrapper">
+                                        <h3>Partido de futbol</h3>
+                                        <p>Necesito 10 personas para jugar un campeonato los dias Viernes a las 20 horas</p>
+                                    </div>
+                                    <div class="date-wrapper">
+                                        <span>Fecha actividad:</span>
+                                        <span>17/11/2017</span>
+                                    </div>
+                                    <div class="category-wrapper">
+                                        <span>Categoria:</span>
+                                        <span>Deporte</span>
+                                    </div>
+                                    <div class="user-wrapper">
+                                        <span>@colomfernando</span>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button><a href="">+</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="pool-wrapper">
+                                <img class="img-responsive" src="/assets/gallery-asset/gallery-3.jpg" alt="img-1">
+                                <div class="item-wrapper">
+                                    <div class="desc-wrapper">
+                                        <h3>Partido de futbol</h3>
+                                        <p>Necesito 10 personas para jugar un campeonato los dias Viernes a las 20 horas</p>
+                                    </div>
+                                    <div class="date-wrapper">
+                                        <span>Fecha actividad:</span>
+                                        <span>17/11/2017</span>
+                                    </div>
+                                    <div class="category-wrapper">
+                                        <span>Categoria:</span>
+                                        <span>Deporte</span>
+                                    </div>
+                                    <div class="user-wrapper">
+                                        <span>@colomfernando</span>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button><a href="">+</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

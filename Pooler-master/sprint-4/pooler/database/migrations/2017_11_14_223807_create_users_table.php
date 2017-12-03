@@ -14,6 +14,8 @@
                 $table->string ('email');
                 $table->string ('password',255);
                 $table->date ('birth');
+                $table->timestamp('updated_at');
+                $table->timestamp ('created_at')->nullable();
                 $table->unsignedInteger('genre_id')->nullable();
                 // Foreing Key for gender table
                 $table->foreign('genre_id')
@@ -21,8 +23,7 @@
                     ->on('gender')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
-                $table->string ('avatar');
-                $table->timestamp ('create_date');
+                $table->string ('avatar')->nullable();
                 $table->unsignedInteger('lang_id')->nullable();
                 // Foreing key for lang table
                 $table->foreign('lang_id')
@@ -30,13 +31,13 @@
                     ->on('language')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
-                $table->integer ('tel_id');
+                $table->integer ('tel_id')->nullable();
                 // Foreing key for tel table
-                $table->integer ('country');
-                $table->integer ('state');
-                $table->integer ('city');
+                $table->integer ('country')->nullable();
+                $table->integer ('state')->nullable();
+                $table->integer ('city')->nullable();
                 $table->timestamp ('last_login')->nullable();
-                $table->string('remember_token', 100);
+                $table->string('remember_token', 100)->nullable();
             });
         }
 

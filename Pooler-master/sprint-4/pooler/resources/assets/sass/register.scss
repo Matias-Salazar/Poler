@@ -1,0 +1,12 @@
+.form-wrapper {
+  padding: 120px;
+  .form-control {
+    border: 1px solid $color-principal;
+  }
+}
+.control-label {
+  color:$color-principal;
+}
+.btn-principal.btn-register {
+  padding: 5px 10px;
+}
