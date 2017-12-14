@@ -1,0 +1,28 @@
+.form-wrapper {
+  padding: 120px;
+  form {
+    border: 1px solid $color-principal;
+    padding:30px;
+    -webkit-box-shadow : 0px 0px 8px #a9a9a9;
+    -moz-box-shadow    : 0px 0px 8px #a9a9a9;
+    box-shadow         : 0px 0px 8px #a9a9a9;
+    -webkit-border-radius : 5px;
+    -moz-border-radius    : 5px;
+    border-radius         : 5px;
+  }
+  .form-control {
+    border: 1px solid $color-principal;
+  }
+  .form-control:focus {
+    border-color: $color-principal;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($color-principal, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($color-principal, 0.6);
+  }
+}
+.control-label {
+  color:$color-principal;
+}
+.btn-principal.btn-register {
+  padding: 5px 10px;
+}

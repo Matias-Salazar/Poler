@@ -3904,7 +3904,6 @@ select[multiple].input-lg,
   }
 }
 
-
 .form-horizontal .radio,
 .form-horizontal .checkbox,
 .form-horizontal .radio-inline,
@@ -7114,15 +7113,12 @@ button.list-group-item-danger.active:focus {
 
 .panel-default {
   border-color: #ddd;
-  margin-top: 20%;
-
 }
 
 .panel-default > .panel-heading {
-  color: #fff;
-  background-color: #ff2e63;
+  color: #333333;
+  background-color: #f5f5f5;
   border-color: #ddd;
-
 }
 
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
@@ -8359,12 +8355,10 @@ button.close {
   font-style: italic;
 }
 
-.logo-color-secundario {
+.logo-color-secundary {
   color: #08D9D6;
   font-style: italic;
 }
-
-
 
 .btn-principal {
   color: white;
@@ -8442,19 +8436,24 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .nav-buttons a {
-  width: 45%;
+  padding: 10px;
 }
 
 .nav-buttons a .btn-principal,
 .nav-buttons a .btn-secondary {
-  width: 100%;
+  padding: 5px 20px;
   height: 30px;
+}
+
+.nav-buttons.logout .welcome-message {
+  margin: 0;
+  padding: 15px;
 }
 
 /* Extra small devices tablets */
@@ -8651,12 +8650,34 @@ footer .copyright {
   padding: 0 10px;
 }
 
+.footer-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .form-wrapper {
   padding: 120px;
 }
 
+.form-wrapper form {
+  border: 1px solid #FF2E63;
+  padding: 30px;
+  -webkit-box-shadow: 0px 0px 8px #a9a9a9;
+  box-shadow: 0px 0px 8px #a9a9a9;
+  border-radius: 5px;
+}
+
 .form-wrapper .form-control {
   border: 1px solid #FF2E63;
+}
+
+.form-wrapper .form-control:focus {
+  border-color: #FF2E63;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 46, 99, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 46, 99, 0.6);
 }
 
 .control-label {
@@ -8667,3 +8688,42 @@ footer .copyright {
   padding: 5px 10px;
 }
 
+.home-wrapper {
+  padding-top: 80px;
+}
+
+
+
+
+
+/*css carousel*/
+
+div.carousel-container  * {
+  display: inline-block;
+  vertical-align: middle;
+}
+div.carousel-container  button {
+  color: red;
+  border: 0px;
+  background: transparent url(./carousel-left.png);
+  height: 28px;
+  width: 17px;
+}
+div.carousel-container  button:last-of-type {
+  background-image: url(./carousel-right.png);
+}
+
+  figure.carousel {
+    height: 256px;
+    width: 256px;
+    overflow: hidden;
+  }
+    figure.carousel ul {
+      list-style-type: none;
+      margin: 0px; padding: 0px;
+      width: 1000%;
+    }
+
+    figure.carousel ul li {
+      display: inline-block;
+    }

@@ -28,16 +28,22 @@ nav {
 }
 .nav-buttons {
   display         : flex;
-  justify-content : space-around;
-  padding         : 10px;
+  justify-content : flex-end;
   a {
-    width : 45%;
+    padding:10px;
     .btn-principal, .btn-secondary {
-      width  : 100%;
+      padding: 5px 20px;
       height : 30px;
     }
   }
 }
+.nav-buttons.logout {
+  .welcome-message {
+    margin: 0;
+    padding:15px;
+  }
+}
+
 // Responsive
 /* Extra small devices tablets */
 @media only screen and (min-width : 480px) {

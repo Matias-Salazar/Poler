@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 form-wrapper">
-                <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                <form name="myForm" class="form-horizontal" method="POST" action="{{ route('register') }}" >
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
-                                       required autofocus>
+                                      onblur="revisar(this); revisaLongitud(this, 3)" onkeyup="revisar(this)" required autofocus>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -82,4 +82,5 @@
             </div>
         </div>
     </div>
+
 @endsection

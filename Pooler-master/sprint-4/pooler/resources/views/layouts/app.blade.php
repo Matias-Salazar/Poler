@@ -20,20 +20,41 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-12 nav-wrapper">
                         <div class="col-xs-2 logo"><a href="{{url ('/')}}"><img src={{asset ('assets/logo-pooler.png')}} alt="logo"></a></div>
-                        <ul class="col-xs-10 col-sm-6 col-md-6 menu">
+                        <ul class="col-xs-10 col-md-6 menu">
+                            @if (Auth::guest() || Request::path() == '/')
                             <li><a class="nav-link" href="#">¿Qué es?</a></li>
-                            <li><a class="nav-link" href="#how-works">¿Cómo funciona?</a></li>
+                            <li><a class="nav-link" href="#">¿Cómo funciona?</a></li>
                             <li><a class="nav-link" href="#">Faq</a></li>
+                                @endif
                         </ul>
-                        <div class="col-xs-12 col-md-4 nav-buttons">
+                        <div class="col-xs-12 col-md-4 nav-buttons{{(!Auth::guest() ? ' logout' : "")}}">
+                            @if (Auth::guest())
                             <a href="{{ route('register') }}"><button class="btn-principal register-btn">Registrate</button></a>
-                            <a href="{{ route('login') }}"><button class="btn-secondary">Ingresa</button></a>
+                                @else
+                                <p class="welcome-message">Hola <span>{{ucfirst (Auth::user()->name)}}</span></p>
+                            @endif
+
+                            @if (Auth::guest())
+                                <a href="{{ route('login') }}"><button class="btn-secondary">Ingresa</button></a>
+                            @else
+                                <a href="{{ url('/logout') }}"><button class="btn-secondary">Salir</button></a>
+                            @endif
                         </div>
                     </div>
                 </div>
             </nav>
         </header>   
         @yield('content')
+        {{-- If current page is index, footer is relative. Otherway add class footer-bottom--}}
+        <footer class="{{(Request::path() == '/') ? "": "footer-bottom"}}">
+            <div class="container-fluid">
+                <div class="row">
+                     <div class="col-xs-12 footer">
+                         <h4 class="copyright">&#9400 2017 <span class="logo-color-principal">Pooler</span></h4>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
     <!-- Scripts -->
     <script src="{{ asset ('js/app.js') }}"></script>
